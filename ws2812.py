@@ -39,8 +39,8 @@ def write2812_numpy4(spi,data):
         #print [hex(v) for v in tx]
     #print [hex(v) for v in tx]
     #spi.xfer(tx.tolist(), int(4/1.25e-6)) #works, on Zero (initially didn't?)
-    #spi.xfer(tx.tolist(), int(4/1.20e-6))  #works, no flashes on Zero, Works on Raspberry 3
-    spi.xfer(tx.tolist(), int(4/1.15e-6))  #works, no flashes on Zero
+    spi.xfer(tx.tolist(), int(4/1.20e-6))  #works, no flashes on Zero, Works on Raspberry 3
+    #spi.xfer(tx.tolist(), int(4/1.15e-6))  #works, no flashes on Zero
     #spi.xfer(tx.tolist(), int(4/1.05e-6))  #works, no flashes on Zero
     #spi.xfer(tx.tolist(), int(4/.95e-6))  #works, no flashes on Zero
     #spi.xfer(tx.tolist(), int(4/.90e-6))  #works, no flashes on Zero
