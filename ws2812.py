@@ -38,8 +38,8 @@ def write2812_numpy4(spi,data):
         tx[3-ibit::4]=((d>>(2*ibit+1))&1)*0x60 + ((d>>(2*ibit+0))&1)*0x06 +  0x88
         #print [hex(v) for v in tx]
     #print [hex(v) for v in tx]
-    spi.xfer(tx.tolist(), int(4/1.25e-6)) #works, on Zero (initially didn't?)
-    #spi.xfer(tx.tolist(), int(4/1.20e-6))  #works, no flashes on Zero, Works on Raspberry 3
+    #spi.xfer(tx.tolist(), int(4/1.25e-6)) #works, on Zero (initially didn't?)
+    spi.xfer(tx.tolist(), int(4/1.20e-6))  #works, no flashes on Zero, Works on Raspberry 3
     #spi.xfer(tx.tolist(), int(4/1.15e-6))  #works, no flashes on Zero
     #spi.xfer(tx.tolist(), int(4/1.05e-6))  #works, no flashes on Zero
     #spi.xfer(tx.tolist(), int(4/.95e-6))  #works, no flashes on Zero
